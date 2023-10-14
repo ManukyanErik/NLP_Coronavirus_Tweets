@@ -20,25 +20,25 @@ The project is organized into the following directories and files:
 To train the NLP classification model, execute the `train.py` script. This script performs the following steps:
 
 1. **Data Preprocessing:**
-   - Reads the training dataset (`Corona_NLP_train.csv`) and preprocesses the tweet data.
-   - Cleans the tweets by removing URLs, mentions, hashtags, digits, HTML tags, and stop words.
-   - Converts sentiment labels to numerical values using label encoding.
+   - Read the training dataset (`Corona_NLP_train.csv`) and preprocesses the tweet data.
+   - Clean the tweets by removing URLs, mentions, hashtags, digits, HTML tags, and stop words.
+   - Convert sentiment labels to numerical values using label encoding.
 
 2. **Tokenization and Padding:**
-   - Tokenizes the preprocessed text using the Keras Tokenizer.
-   - Pads the tokenized sequences to ensure consistent lengths for training.
+   - Tokenize the preprocessed text using the Keras Tokenizer.
+   - Pad the tokenized sequences to ensure consistent lengths for training.
 
 3. **Model Architecture:**
-   - Defines the LSTM model architecture using Keras, including embedding layers, LSTM layers, and dense layers.
-   - Compiles the model using Adam optimizer and sparse categorical cross-entropy loss function.
+   - Define the LSTM model architecture using Keras, including embedding layers, LSTM layers, and dense layers.
+   - Compile the model using Adam optimizer and sparse categorical cross-entropy loss function.
 
 4. **Training:**
-   - Trains the model using the training data and validates using a validation set.
-   - Uses early stopping and learning rate reduction callbacks for optimization.
+   - Train the model using the training data and validates using a validation set.
+   - Use early stopping and learning rate reduction callbacks for optimization.
 
 5. **Saving:**
-   - Saves the trained model to the `models` directory in an HDF5 file format.
-   - Saves the tokenizer to the `tokenizers` directory using pickle for later use during prediction.
+   - Save the trained model to the `models` directory in an HDF5 file format.
+   - Save the tokenizer to the `tokenizers` directory using pickle for later use during prediction.
 
 Run the following command to train the model:
 
@@ -51,14 +51,14 @@ python train.py
 To make predictions on new data using the trained model, use the `predict.py` script. This script performs the following steps:
 
 1. **Loading Pretrained Model and Tokenizer:**
-   - Loads the pre-trained LSTM model and tokenizer from the `models` and `tokenizers` directories, respectively.
+   - Load the pre-trained LSTM model and tokenizer from the `models` and `tokenizers` directories, respectively.
 
 2. **Data Preprocessing:**
-   - Preprocesses the testing dataset (`Corona_NLP_test.csv`) similarly to the training data, including text cleaning and tokenization.
+   - Preprocess the testing dataset (`Corona_NLP_test.csv`) similarly to the training data, including text cleaning and tokenization.
 
 3. **Prediction:**
-   - Uses the loaded model to predict the sentiment classes for the preprocessed testing data.
-   - Prints the predicted sentiment classes to the console.
+   - Use the loaded model to predict the sentiment classes for the preprocessed testing data.
+   - Print the predicted sentiment classes to the console.
 
 Run the following command to make predictions:
 
